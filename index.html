@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Effects Container -->
+    <div class="particles-container" id="particlesContainer"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <div class="falling-petals" id="fallingPetals"></div>
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Main Content -->
+    <div class="main-container" id="mainContainer">
+        <!-- Initial View: Gift Box -->
+        <div class="gift-scene" id="giftScene">
+            <div class="glow-effect"></div>
+            <div class="gift-box" id="giftBox">
+                <div class="gift-top">
+                    <div class="ribbon-vertical"></div>
+                    <div class="ribbon-horizontal"></div>
+                    <div class="bow">
+                        <div class="bow-left"></div>
+                        <div class="bow-right"></div>
+                        <div class="bow-center"></div>
+                    </div>
+                </div>
+                <div class="gift-bottom"></div>
+                <div class="heart-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="instruction-text">
+                <p>Click vào hộp quà để mở nhé... 💝</p>
+            </div>
+        </div>
+
+        <!-- Content After Opening -->
+        <div class="content-reveal" id="contentReveal">
+            <button class="close-btn" id="closeBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Welcome Message -->
+            <div class="welcome-section">
+                <h1 class="main-title" id="mainTitle"></h1>
+                <p class="subtitle" id="subtitle"></p>
+            </div>
+
+            <!-- Photo Gallery -->
+            <section class="gallery-section">
+                <h2 class="section-title">Những Khoảnh Khắc Của Chúng Mình</h2>
+                <div class="gallery-container">
+                    <button class="gallery-nav prev" id="prevBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="gallery-track" id="galleryTrack">
+                        <!-- Placeholder images - replace with actual photos -->
+                        <div class="gallery-item">
+                            <div class="photo-placeholder">
+                                <span>📸</span>
+                                <p>Ảnh 1</p>
+                            </div>
+                            <p class="photo-caption">Khoảnh khắc đầu tiên</p>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="photo-placeholder">
+                                <span>📸</span>
+                                <p>Ảnh 2</p>
+                            </div>
+                            <p class="photo-caption">Kỷ niệm ngọt ngào</p>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="photo-placeholder">
+                                <span>📸</span>
+                                <p>Ảnh 3</p>
+                            </div>
+                            <p class="photo-caption">Hạnh phúc bên nhau</p>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="photo-placeholder">
+                                <span>📸</span>
+                                <p>Ảnh 4</p>
+                            </div>
+                            <p class="photo-caption">Yêu thương mỗi ngày</p>
+                        </div>
+                    </div>
+                    <button class="gallery-nav next" id="nextBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="gallery-dots" id="galleryDots"></div>
+            </section>
+
+            <!-- Timeline -->
+            <section class="timeline-section">
+                <h2 class="section-title">Hành Trình Của Chúng Ta</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-date">Ngày đầu tiên gặp nhau</h3>
+                            <p>Ngày mà tất cả bắt đầu, khi em bước vào đời anh...</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-date">Lần đầu nắm tay</h3>
+                            <p>Cảm giác ấm áp lan tỏa, anh biết rằng em là người đặc biệt...</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-date">Chính thức yêu nhau</h3>
+                            <p>Ngày mà trái tim anh và em trở thành một...</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-date">Hôm nay - Valentine</h3>
+                            <p>Và tình yêu của chúng ta vẫn đang tiếp tục viết nên những trang mới...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Love Letter -->
+            <section class="letter-section">
+                <h2 class="section-title">Thư Gửi Em</h2>
+                <div class="letter-container">
+                    <div class="letter-content">
+                        <p class="letter-greeting">Gửi người anh yêu,</p>
+
+                        <p>Em có biết không, mỗi ngày bên em là một món quà quý giá nhất anh có được trong đời. Từ ngày có em, cuộc sống của anh như được thêm màu sắc, như có thêm ý nghĩa.</p>
+
+                        <p>Những khoảnh khắc bên em, dù là giây phút bình dị nhất, cũng trở nên đặc biệt và đáng nhớ. Tiếng cười của em, nụ cười của em, cả những lúc em giận dỗi, tất cả đều làm anh yêu em nhiều hơn mỗi ngày.</p>
+
+                        <p>Valentine này, anh không có lời hứa hẹn hoa mỹ, chỉ có trái tim chân thành và tình yêu vô bờ bến dành cho em. Anh hứa sẽ luôn ở đây, nắm tay em đi qua mọi khó khăn, chia sẻ mọi niềm vui.</p>
+
+                        <p>Cảm ơn em vì đã đến bên anh. Cảm ơn em vì đã làm anh trở thành người đàn ông tốt hơn. Và cảm ơn em vì đã cho anh cơ hội được yêu thương em mỗi ngày.</p>
+
+                        <p class="letter-closing">Mãi yêu em,<br>Người của em ❤️</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <div class="audio-player" id="audioPlayer">
+        <button class="audio-toggle" id="audioToggle">
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+            </svg>
+        </button>
+        <span class="audio-label">Nhạc nền</span>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="romantic-music.mp3" type="audio/mpeg">
+        <!-- Replace with your own romantic music file -->
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
