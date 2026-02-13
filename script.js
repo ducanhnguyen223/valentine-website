@@ -92,27 +92,45 @@ function createParticles() {
     }, 600);
 }
 
-function createConfetti() {
-    const colors = ['#c44569', '#e89bb5', '#d4a574', '#f4d03f', '#ffb347'];
-    const confettiCount = 100;
+function createFireworks() {
+    const colors = ['#c44569', '#e89bb5', '#ff6b9d', '#ff8fab', '#ffa5bd'];
+    const fireworksCount = 6; // Number of firework bursts
 
-    for (let i = 0; i < confettiCount; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = `${50 + (Math.random() - 0.5) * 40}%`;
-        confetti.style.top = '50%';
-        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.animationDelay = `${Math.random() * 0.3}s`;
-        confetti.style.animationDuration = `${2 + Math.random() * 2}s`;
+    for (let f = 0; f < fireworksCount; f++) {
+        setTimeout(() => {
+            // Launch position (random around center)
+            const launchX = 40 + Math.random() * 20; // 40-60%
+            const particlesPerBurst = 30;
 
-        // Random shape
-        if (Math.random() > 0.5) {
-            confetti.style.borderRadius = '50%';
-        }
+            for (let i = 0; i < particlesPerBurst; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firework-particle';
 
-        elements.confettiContainer.appendChild(confetti);
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                particle.style.color = color;
 
-        setTimeout(() => confetti.remove(), 4000);
+                // Starting position (center of screen)
+                particle.style.left = `${launchX}%`;
+                particle.style.top = '60%';
+
+                // Random explosion direction
+                const angle = (Math.PI * 2 * i) / particlesPerBurst;
+                const velocity = 100 + Math.random() * 150;
+                const explodeX = Math.cos(angle) * velocity;
+                const explodeY = Math.sin(angle) * velocity - 50; // Bias upward
+
+                particle.style.setProperty('--explode-x', `${explodeX}px`);
+                particle.style.setProperty('--explode-y', `${explodeY}px`);
+
+                particle.style.animation = `fireworkExplode ${0.8 + Math.random() * 0.4}s ease-out forwards`;
+                particle.style.animationDelay = `${Math.random() * 0.1}s`;
+
+                elements.confettiContainer.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 1500);
+            }
+        }, f * 200); // Stagger fireworks
     }
 }
 
@@ -148,9 +166,9 @@ async function openGiftBox() {
     state.isBoxOpened = true;
     elements.giftBox.classList.add('opening');
 
-    // Create confetti effect
+    // Create fireworks effect
     setTimeout(() => {
-        createConfetti();
+        createFireworks();
     }, 600);
 
     // Hide gift scene and show content

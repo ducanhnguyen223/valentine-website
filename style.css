@@ -121,21 +121,37 @@ body {
     }
 }
 
-.confetti {
+/* Fireworks particle */
+.firework-particle {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
     opacity: 0;
-    animation: confettiFall 3s ease-out forwards;
+    box-shadow: 0 0 10px currentColor;
 }
 
-@keyframes confettiFall {
+@keyframes fireworkLaunch {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) scale(1);
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh) rotate(720deg);
+        transform: translateY(var(--launch-y)) translateX(var(--launch-x)) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes fireworkExplode {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--explode-x), var(--explode-y)) scale(0);
         opacity: 0;
     }
 }
@@ -250,8 +266,32 @@ body {
 }
 
 .gift-box.opening .gift-top {
-    transform: rotateX(-120deg) translateY(-40px);
-    opacity: 0.3;
+    transform: translateY(-150px) rotateX(-20deg) scale(1.2);
+    opacity: 0;
+}
+
+.gift-box.opening .gift-bottom {
+    transform: scale(0.8) translateY(20px);
+    opacity: 0.5;
+}
+
+.gift-box.opening {
+    animation: giftDisappear 1.5s ease-out forwards;
+}
+
+@keyframes giftDisappear {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1) translateY(-20px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.7) translateY(50px);
+        opacity: 0;
+    }
 }
 
 .ribbon-vertical,
