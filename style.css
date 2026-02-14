@@ -552,7 +552,7 @@ section {
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    padding: var(--spacing-md);
+    padding: var(--spacing-md) 0;
     box-shadow: 0 20px 60px var(--shadow-dark);
 }
 
@@ -569,7 +569,6 @@ section {
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
-    padding: 0 var(--spacing-md);
 }
 
 .photo-placeholder {
