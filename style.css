@@ -559,15 +559,17 @@ section {
 .gallery-track {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    gap: var(--spacing-md);
 }
 
 .gallery-item {
     min-width: 100%;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-sm);
+    padding: 0 var(--spacing-md);
 }
 
 .photo-placeholder {
